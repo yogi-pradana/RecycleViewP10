@@ -18,6 +18,7 @@ class MovieDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Ambil data dari Intent
+        val gambar = intent.getIntExtra("movie_gambar",1)
         val title = intent.getStringExtra("movie_title")
         val genre = intent.getStringExtra("movie_genre")
         val duration = intent.getStringExtra("movie_duration")
@@ -25,6 +26,7 @@ class MovieDetailActivity : AppCompatActivity() {
         val synopsis = intent.getStringExtra("movie_synopsis")
 
         // Set data ke tampilan
+        binding.imageMovieDetail.setImageResource(gambar)
         binding.textTitleDetail.text = title
         binding.textGenreDetail.text = genre // Tambahkan genre
         binding.textDurationDetail.text = duration // Tambahkan durasi

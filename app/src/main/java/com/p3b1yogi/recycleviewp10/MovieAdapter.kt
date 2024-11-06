@@ -23,11 +23,13 @@ class MovieAdapter (
         val movie = movies[position]
         holder.binding.imageMovie.setImageResource(movie.imageResId)
         holder.binding.txtJudulFilm.text = movie.title
-        holder.binding.txtDurasi.text = "${movie.duration} • ${movie.rating}"
+        holder.binding.txtDurasi.text = "${movie.duration}"
+        holder.binding.txtUmur.text = "${movie.rating}"
 
 
         holder.binding.root.setOnClickListener {
             val intent = Intent(context, MovieDetailActivity::class.java).apply {
+                putExtra("movie_gambar", movie.imageResId)
                 putExtra("movie_title", movie.title)
                 putExtra("movie_genre", movie.genre)
                 putExtra("movie_duration", movie.duration)
