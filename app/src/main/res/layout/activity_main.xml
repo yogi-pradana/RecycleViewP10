@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backround"
     tools:context=".MainActivity">
 
     <!-- Toolbar di bagian atas -->
@@ -44,12 +45,148 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What do you want to do now, Yogi?"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!--    Tombol ke 4 menu-->
+    <ImageButton
+        android:id="@+id/btn_movie"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:background="@drawable/radius_btn"
+        android:src="@drawable/icon_movie"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        app:layout_constraintTop_toBottomOf="@id/text_1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_food"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/radius_btn"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/icon_food"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        app:layout_constraintTop_toBottomOf="@id/text_1"
+        app:layout_constraintStart_toEndOf="@id/btn_movie" />
+
+    <ImageButton
+        android:id="@+id/btn_cinema"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/radius_btn"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/icon_cinema"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        app:layout_constraintTop_toBottomOf="@id/text_1"
+        app:layout_constraintStart_toEndOf="@id/btn_food" />
+
+    <ImageButton
+        android:id="@+id/btn_private_booking"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/radius_btn"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/icon_private_booking"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:layout_constraintTop_toBottomOf="@id/text_1"
+        app:layout_constraintStart_toEndOf="@+id/btn_cinema"/>
+
+    <!--    Teks untuk 4 tombol-->
+    <TextView
+        android:id="@+id/txt_movie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        android:text="Movie"
+        app:layout_constraintTop_toBottomOf="@id/btn_movie"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_food"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="17dp"
+        android:text="Food"
+        app:layout_constraintTop_toBottomOf="@id/btn_food"
+        app:layout_constraintStart_toEndOf="@id/btn_movie" />
+
+    <TextView
+        android:id="@+id/txt_cinema"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Cinema"
+        android:layout_marginStart="13dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_cinema"
+        app:layout_constraintStart_toEndOf="@id/btn_food" />
+
+    <TextView
+        android:id="@+id/txt_private_booking"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=" Private Booking"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_private_booking"
+        app:layout_constraintStart_toEndOf="@+id/btn_cinema"/>
+
+    <!--    Our Hottest Movie-->
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="25dp"
+        android:text="OUR HOOTEST MOVIE"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/txt_movie"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginStart="140dp"
+        android:text="See more >"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/txt_movie"
+        app:layout_constraintStart_toEndOf="@id/text_2" />
+
+
     <!-- RecyclerView untuk daftar film -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/text_2"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

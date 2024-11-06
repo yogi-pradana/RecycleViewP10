@@ -22,8 +22,8 @@ class MovieAdapter (
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = movies[position]
         holder.binding.imageMovie.setImageResource(movie.imageResId)
-        holder.binding.textTitle.text = movie.title
-        holder.binding.textDuration.text = "${movie.duration} • ${movie.rating}"
+        holder.binding.txtJudulFilm.text = movie.title
+        holder.binding.txtDurasi.text = "${movie.duration} • ${movie.rating}"
 
 
         holder.binding.root.setOnClickListener {
